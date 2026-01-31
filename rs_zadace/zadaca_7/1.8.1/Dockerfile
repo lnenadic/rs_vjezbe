@@ -1,0 +1,13 @@
+FROM python:3.13-slim
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+
+COPY authAPI.py .
+
+EXPOSE 9000
+
+CMD ["python", "authAPI.py"]
